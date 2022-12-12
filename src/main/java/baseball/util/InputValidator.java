@@ -3,9 +3,8 @@ package baseball.util;
 import baseball.message.ErrorMessage;
 
 public class InputValidator {
-
-    public static final String RESTART = "1";
-    public static final String END_GAME = "2";
+    private static final String RESTART = "1";
+    private static final String END_GAME = "2";
 
     private InputValidator() {
     }
