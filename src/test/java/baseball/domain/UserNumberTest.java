@@ -16,7 +16,7 @@ class UserNumberTest {
                 Arguments.of(List.of(7, 8, 9), List.of(0, 0)),
                 Arguments.of(List.of(1, 4, 5), List.of(1, 0)),
                 Arguments.of(List.of(1, 3, 4), List.of(1, 1)),
-                Arguments.of(List.of(3, 2, 1), List.of(1 ,2)),
+                Arguments.of(List.of(3, 2, 1), List.of(1, 2)),
                 Arguments.of(List.of(4, 2, 3), List.of(2, 0)),
                 Arguments.of(List.of(1, 2, 3), List.of(3, 0))
         );
