@@ -52,4 +52,12 @@ public class ComputerNumber {
     public int hashCode() {
         return Objects.hash(numbers);
     }
+
+    public boolean isStrike(final int index, final int userNumber) {
+        return numbers.get(index) == userNumber;
+    }
+
+    public boolean isContains(final int userNumber) {
+        return numbers.contains(userNumber);
+    }
 }
