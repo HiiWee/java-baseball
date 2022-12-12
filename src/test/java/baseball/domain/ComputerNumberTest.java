@@ -30,7 +30,6 @@ class ComputerNumberTest {
     void randomComputerNumber_generate_fail(int first, int second, int third) {
         // given
         List<Integer> numbers = List.of(first, second, third);
-        System.out.println(numbers.size());
 
         // when
         // then
