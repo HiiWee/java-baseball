@@ -27,6 +27,7 @@ public class ComputerNumberRepository {
     }
 
     public ComputerNumber generateComputerNumber() {
+        delete();
         List<Integer> numbers = new ArrayList<>();
         while (numbers.size() < MAX_SIZE) {
             int randomNumber = Randoms.pickNumberInRange(1, 9);

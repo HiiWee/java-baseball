@@ -1,14 +1,16 @@
 package baseball.service;
 
 import baseball.controller.dto.UserNumberInputDto;
+import baseball.domain.GameResult;
 import baseball.domain.UserNumber;
 import baseball.repository.ComputerNumberRepository;
 
 public class GameService {
     private final ComputerNumberRepository computerNumberRepository = ComputerNumberRepository.getInstance();
 
-    public void createCompareResult(final UserNumberInputDto userNumberInputDto) {
+    public GameResult createCompareResult(final UserNumberInputDto userNumberInputDto) {
         UserNumber userNumber = new UserNumber(userNumberInputDto.getNumbersList());
+        return new GameResult(userNumber.compare(computerNumberRepository.find()));
     }
 
     public void initializeComputerNumber() {
