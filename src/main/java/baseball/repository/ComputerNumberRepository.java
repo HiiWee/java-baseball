@@ -7,17 +7,26 @@ import java.util.List;
 
 public class ComputerNumberRepository {
     public static final int COMPUTER_NUMBER = 0;
-    private static final List<ComputerNumber> instance = new ArrayList<>();
     public static final int MAX_SIZE = 3;
+    private static final ComputerNumberRepository instance = new ComputerNumberRepository();
+    private static final List<ComputerNumber> store = new ArrayList<>();
 
     private ComputerNumberRepository() {
     }
 
-    public static ComputerNumber getInstance() {
-        return instance.get(COMPUTER_NUMBER);
+    public static ComputerNumberRepository getInstance() {
+        return instance;
     }
 
-    public void generateComputerNumber() {
+    public void delete() {
+        store.clear();
+    }
+
+    public ComputerNumber find() {
+        return store.get(COMPUTER_NUMBER);
+    }
+
+    public ComputerNumber generateComputerNumber() {
         List<Integer> numbers = new ArrayList<>();
         while (numbers.size() < MAX_SIZE) {
             int randomNumber = Randoms.pickNumberInRange(1, 9);
@@ -25,6 +34,7 @@ public class ComputerNumberRepository {
                 numbers.add(randomNumber);
             }
         }
-        instance.add(new ComputerNumber(numbers));
+        store.add(new ComputerNumber(numbers));
+        return store.get(COMPUTER_NUMBER);
     }
 }
