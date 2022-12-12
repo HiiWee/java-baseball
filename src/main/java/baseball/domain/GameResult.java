@@ -8,9 +8,9 @@ public class GameResult {
     private final int strike;
     private final int ball;
 
-    public GameResult(final List<Integer> compare) {
-        strike = compare.get(STRIKE_INDEX);
-        ball = compare.get(BALL_INDEX);
+    public GameResult(final List<Integer> gameResults) {
+        strike = gameResults.get(STRIKE_INDEX);
+        ball = gameResults.get(BALL_INDEX);
     }
 
     public int getStrike() {
