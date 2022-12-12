@@ -14,7 +14,7 @@ public enum GameResultStatus {
         this.value = value;
     }
 
-    public static String createResultMessage(GameResult gameResult) {
+    public static String createResultMessage(final GameResult gameResult) {
         if (gameResult.isNothing()) {
             return NOTHING.value;
         }

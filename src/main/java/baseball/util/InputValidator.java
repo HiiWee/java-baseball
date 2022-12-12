@@ -9,7 +9,7 @@ public class InputValidator {
     private InputValidator() {
     }
 
-    public static int validateRestartInput(String userInput) {
+    public static int validateRestartInput(final String userInput) {
         if (!userInput.equals(RESTART) && !userInput.equals(END_GAME)) {
             throw new IllegalArgumentException(ErrorMessage.INVALID_RESTART_INPUT_ERROR);
         }
