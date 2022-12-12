@@ -21,7 +21,7 @@ public class UserNumberInputDto {
                 .collect(Collectors.toList());
     }
 
-    public void validate(final String userInput) {
+    private void validate(final String userInput) {
         if (!isNumeric(userInput)) {
             throw new IllegalArgumentException(ErrorMessage.INVALID_NUMERIC_ERROR);
         }
