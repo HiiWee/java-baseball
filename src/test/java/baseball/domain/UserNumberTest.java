@@ -31,7 +31,7 @@ class UserNumberTest {
 
         // when
         UserNumber userNumber = new UserNumber(userNumbers);
-        List<Integer> actualResult = userNumber.compare(computerNumber);
+        List<Integer> actualResult = userNumber.getResultList(computerNumber);
 
         // then
         Assertions.assertThat(actualResult.equals(expectedResult)).isTrue();

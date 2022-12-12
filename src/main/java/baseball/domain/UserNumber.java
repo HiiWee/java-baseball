@@ -9,7 +9,7 @@ public class UserNumber {
         this.numbers = numbers;
     }
 
-    public List<Integer> compare(final ComputerNumber computerNumber) {
+    public List<Integer> getResultList(final ComputerNumber computerNumber) {
         return List.of(
                 calculateStrike(computerNumber),
                 calculateSameNumber(computerNumber) - calculateStrike(computerNumber)

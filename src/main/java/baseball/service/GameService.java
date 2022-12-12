@@ -10,7 +10,7 @@ public class GameService {
 
     public GameResult createCompareResult(final UserNumberInputDto userNumberInputDto) {
         UserNumber userNumber = new UserNumber(userNumberInputDto.getNumbersList());
-        return new GameResult(userNumber.compare(computerNumberRepository.find()));
+        return new GameResult(userNumber.getResultList(computerNumberRepository.find()));
     }
 
     public void initializeComputerNumber() {

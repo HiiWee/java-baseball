@@ -1,6 +1,8 @@
 package baseball.controller;
 
 import baseball.controller.dto.UserNumberInputDto;
+import baseball.domain.GameResult;
+import baseball.domain.enums.GameResultStatus;
 import baseball.service.GameService;
 import baseball.util.InputValidator;
 import baseball.view.InputView;
@@ -21,7 +23,11 @@ public class GameController {
     }
 
     private void requestUserNumbers() {
-        gameService.createCompareResult(new UserNumberInputDto(inputView.inputUserNumbers()));
+        GameResult gameResult;
+        do {
+            gameResult = gameService.createCompareResult(new UserNumberInputDto(inputView.inputUserNumbers()));
+            OutputView.printResult(GameResultStatus.createResultMessage(gameResult));
+        } while (!gameResult.isWinning());
     }
 
     private void initializeGame() {
